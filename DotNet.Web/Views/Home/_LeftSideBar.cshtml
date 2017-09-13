@@ -1,0 +1,97 @@
+﻿   <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="~/images/UserPhoto/default.jpg"@*@user.PhotoPath*@ class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>@*@user.UserName*@</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+            </div>
+        </div>
+        <!-- 查找 表单 -->
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        @*<ul class="sidebar-menu">
+            <li class="header">功能菜单</li>
+            @foreach (var firstMenu in firstLevelMenus)
+            {
+                if (firstMenu.HaveChild)
+                {
+                    <li class="treeview">
+                        <a href="javascript:void(0)">
+                            <i class="fa @firstMenu.Icon"></i>
+                            <span>@firstMenu.Name</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @foreach (var secondMenu in secondLevelMenus)
+                            {
+                                if (secondMenu.HaveChild && secondMenu.ParentId == firstMenu.Id)
+                                {
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="fa @secondMenu.Icon"></i>
+                                            @secondMenu.Name
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            @foreach (var ThirdMenu in secondLevelMenus)
+                                            {
+                                                if (ThirdMenu.ParentId == secondMenu.Id)
+                                                {
+                                                    <li><a href="javascript:void(0)" onclick="createIframe('@ThirdMenu.ControllerNameCode/@ThirdMenu.ActionNameCode','@ThirdMenu.Name')"><i class="fa fa-circle-o"></i> @ThirdMenu.Name</a></li>
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    if (secondMenu.ParentId == firstMenu.Id)
+                                    {
+                                        <li>
+                                            <a href="javascript:void(0)" onclick="createIframe('@secondMenu.ControllerNameCode/@secondMenu.ActionNameCode', '@secondMenu.Name') ">
+                                                <i class="fa @secondMenu.Icon"></i> @secondMenu.Name
+                                            </a>
+                                        </li>
+                                    }
+                                }
+                            }
+                            @*<li>
+                                    <a href="index.html">
+                                        <i class="fa fa-circle-o"></i> Dashboard v1
+                                    </a>
+                                </li>*@
+                        @*</ul>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="javascript:void(0)" onclick="createIframe('@firstMenu.ControllerNameCode/@firstMenu.ActionNameCode','@firstMenu.Name')">
+                            <i class="fa @firstMenu.Icon"></i>
+                            <span>@firstMenu.Name</span>
+                            @*<small class="label pull-right bg-green">new</small>*@
+                        @*</a>
+                    </li>
+                }
+            }
+               <li class="header">其他</li>
+               <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+               <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+               <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+           </ul>*@
+       </section>
+       <!-- /.sidebar -->
+   </aside>

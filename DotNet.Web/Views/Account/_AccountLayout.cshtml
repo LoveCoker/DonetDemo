@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Head
+    {
+    <link href="~/css/Login/demo.css" rel="stylesheet" />
+    <link href="~/css/Login/style.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <!-- 页眉 -->
+    <div class="codrops-top">
+        <a href="#">
+            <strong>&laquo; Designed By: </strong>Mr_Han
+        </a>
+        <span class="right">
+            <a href="#">
+                <strong>返回</strong>
+            </a>
+        </span>
+        <div class="clr"></div>
+    </div>
+    <!--/ 页眉 -->
+    <header>
+        <h1>Welcome to My <span>MVC System</span></h1>
+        <nav class="codrops-demos">
+        </nav>
+    </header>
+    <section>
+        <div id="container_demo">
+            <div id="wrapper">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+</div>
+@section Scripts
+{
+    <script>
+        var ensureAccountAddress ='@Url.Action("AccountExit")';
+        var ensureEmailAddress ='@Url.Action("EmailExit")';
+        require.config({
+            baseUrl: '/js/pages'
+        });
+        require(['login'],
+            function (login) {
+                login.Init();
+            });
+    </script>
+}
+

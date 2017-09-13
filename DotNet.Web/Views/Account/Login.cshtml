@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Account/_AccountLayout.cshtml";
+    ViewData["Title"] = "系统登录";
+}
+<div id="login" class="animate form">
+    <form asp-controller="Account" asp-action="CheckLogin" method="post" autocomplete="on">
+        <h1>登录</h1>
+        <p>
+
+            <label for="username" data-icon="u"> 用户名 </label>
+            <input id="username" name="name" required="required" type="text" placeholder="请输入您的用户名 或 电子邮件地址" />
+        </p>
+        <p>
+            <label for="password" data-icon="p"> 密码 </label>
+            <input id="password" name="pwd" required="required" type="password" placeholder="eg. X8df!90EO" />
+        </p>
+        <p>
+            <label for="VCode"> 验证码 </label>
+            <br />
+            <span>
+                <input name="code" required="required" style="width: 150px" type="text" placeholder="eg. 0000" />&nbsp;&nbsp;
+                <img id="img" src="@Url.Action("CreateCodeImg")?v=1" title="点击更换验证码" alt="验证码" />
+            </span>
+        </p>
+        <p class="keeplogin">
+            @ViewBag.Msg
+        </p>
+        <p class="login button">
+            <input type="submit" value="登录" />
+        </p>
+        <p class="change_link">
+            还没注册 ?
+            <a href="@Url.Action("Regist")">加入我们</a>
+        </p>
+    </form>
+</div>

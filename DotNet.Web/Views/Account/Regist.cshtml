@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Account/_AccountLayout.cshtml";
+    ViewData["Title"] = "账号注册";
+}
+
+@********************注册表单**********************@
+<div id="login" class="animate form">
+    <form asp-controller="Account" asp-action="Regist" method="post" autocomplete="on">
+        <h1> 注册 </h1>
+        <p>
+            <label for="useridsignup" data-icon="u">账号</label>
+            <input name="regName" required="required" type="text" placeholder="eg:xiaoming123" />
+        </p>
+        <p>
+            <label for="usernamesignup" data-icon="u">用户名</label>
+            <input name="regNickName" required="required" type="text" placeholder="eg:李磊" />
+        </p>
+        <p>
+            <label for="emailsignup" data-icon="e"> E-Mail</label>
+            <input name="regEmail" required="required" type="email" placeholder="eg:mysupermail@mail.com" />
+        </p>
+        <p>
+            <label for="passwordsignup" data-icon="p">密码 </label>
+            <input name="regPwd" required="required" type="password" placeholder="eg: X8df!90EO" />
+        </p>
+        <p>
+            <label for="passwordsignup_confirm" data-icon="p">确认密码 </label>
+            <input name="regPwdEnsure" required="required" type="password" placeholder="eg: X8df!90EO" />
+        </p>
+        <p class="signin button">
+            @ViewBag.RegMsg
+        </p>
+        <p class="signin button">
+            <input type="submit" value="注册" />
+        </p>
+        <p class="change_link">
+            已经注册 ?
+            <a href="@Url.Action("Login")"> 前去登录 </a>
+        </p>
+    </form>
+</div>
